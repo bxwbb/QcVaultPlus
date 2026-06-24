@@ -1,0 +1,10 @@
+name: QcVaultPlus
+version: '0.0.1'
+main: io.github.bxwbb.qcVaultPlus.QcVaultPlus
+api-version: '1.21'
+authors: [ BXWBB ]
+description: 箭袋摸箱子仓库保险箱
+
+commands:
+  qcvaultplus:
+    description: 箭袋摸箱子仓库保险箱核心命令

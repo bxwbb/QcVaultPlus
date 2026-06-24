@@ -1,0 +1,17 @@
+arrow-case:
+  low:
+    item-type: LEATHER
+    display-name: "<green>普通箭袋"
+    lore:
+      - "非常普通的箭袋"
+    amount: 7
+    custom-model-data: 1
+
+chest:
+  low:
+    pos: []
+    low-time: 10
+    high-time: 10
+    player-switch-limit: 10
+    loot-table: dungeon
+    time-string: <yellow>还剩 %02d分%02d秒
