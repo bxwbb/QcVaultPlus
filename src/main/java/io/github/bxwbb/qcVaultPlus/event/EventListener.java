@@ -6,6 +6,7 @@ import io.github.bxwbb.qcVaultPlus.storage.Storage;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.title.Title;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
 import org.bukkit.Material;
@@ -28,6 +29,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -235,10 +237,15 @@ public class EventListener implements Listener {
         Entity hitEntity = event.getEntity();
         double damage = event.getDamage();
         String entityName = hitEntity.getName();
-
-        shooter.playSound(shooter.getLocation(), Sound.ENTITY_ARROW_HIT_PLAYER, SoundCategory.PLAYERS, 1, 1.2f);
+        shooter.playSound(shooter.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 1, 1.2f);
         Component actionBarText = mm.deserialize("<green>命中目标：<white>" + entityName + " <green>伤害：<white>" + String.format("%.1f", damage));
         shooter.sendActionBar(actionBarText);
+        Title title = Title.title(
+                mm.deserialize("<green>↓ ↑"),
+                Component.empty(),
+                Title.Times.times(Duration.ZERO, Duration.ofMillis(750), Duration.ofMillis(250))
+        );
+        shooter.showTitle(title);
     }
 
     @EventHandler
