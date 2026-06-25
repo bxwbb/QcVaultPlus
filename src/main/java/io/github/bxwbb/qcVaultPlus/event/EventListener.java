@@ -241,7 +241,7 @@ public class EventListener implements Listener {
         Component actionBarText = mm.deserialize("<green>命中目标：<white>" + entityName + " <green>伤害：<white>" + String.format("%.1f", damage));
         shooter.sendActionBar(actionBarText);
         Title title = Title.title(
-                mm.deserialize("<green>↓ ↑"),
+                mm.deserialize("<green>>  <"),
                 Component.empty(),
                 Title.Times.times(Duration.ZERO, Duration.ofMillis(750), Duration.ofMillis(250))
         );
